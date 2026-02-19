@@ -12,6 +12,24 @@
 
 ---
 
+## 🎥 Content Creator – Crickotainment
+
+Besides tech, I am also passionate about content creation!  
+I run a creative page focused on cricket & entertainment — blending fun with insights.
+
+🔥 Instagram: https://www.instagram.com/crickotainment
+
+### What I Create
+- 🎬 Short videos on cricket moments  
+- 🏏 Highlights with fun commentary  
+- 📈 Engaging reels and trending content  
+- 🧠 Fan-centric entertainment posts
+
+Check out my Instagram for daily cricket vibes! 👇  
+👉 https://www.instagram.com/crickotainment
+
+---
+
 ## 🛠️ Tech Stack
 
 **Cloud:**  
