@@ -39,8 +39,6 @@
 - Implemented IAM roles & policies  
 - Used S3 for storage and logs  
 
-👉 Repo: (yaha baad me link daalna)
-
 ---
 
 ### 🔹 Dockerized Python Application on AWS
@@ -49,16 +47,12 @@
 - Deployed on AWS EKS  
 - DNS configured using Route 53  
 
-👉 Repo: (yaha baad me link)
-
 ---
 
 ### 🔹 CI/CD Pipeline using Jenkins
 - Jenkins setup on AWS EC2  
 - GitHub integrated  
 - Automated Docker build & deployment  
-
-👉 Repo: (yaha baad me link)
 
 ---
 
