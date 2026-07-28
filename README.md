@@ -143,6 +143,44 @@ Both the create and destroy Jenkins pipelines require human approval before Terr
 
 ---
 
+## 🚀 Featured Project — github-actions-eks
+
+### GitOps CI/CD Pipeline — Flask on AWS EKS with FluxCD Image Automation
+
+*A pull-based GitOps delivery pipeline, wired end-to-end from Git push to cluster reconciliation*
+
+```
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                     GITHUB-ACTIONS-EKS — PIPELINE FLOW                    ║
+╠════════════════╦═══════════════════╦════════════════════════════════════╣
+║   DEV PUSH      ║   CI (GH Actions) ║         CD (FluxCD on EKS)         ║
+╠════════════════╬═══════════════════╬════════════════════════════════════╣
+║  git push main  ║  Flake8 lint      ║  ImageRepository polls Docker Hub  ║
+║  (app.py,       ║  Pytest suite     ║   for new tags (1m interval)       ║
+║   Dockerfile,   ║  Docker build     ║  ImagePolicy filters + sorts       ║
+║   requirements) ║  Push to          ║   YYYYMMDD-HHMMSS-<sha> tags       ║
+║                 ║   Docker Hub      ║  ImageUpdateAutomation commits     ║
+║                 ║  Tag:             ║   new tag into helm/values.yaml    ║
+║                 ║   YYYYMMDD-       ║  Kustomization + HelmRelease       ║
+║                 ║   HHMMSS-<sha>    ║   reconcile the chart onto EKS     ║
+╚════════════════╩═══════════════════╩════════════════════════════════════╝
+   No manual kubectl apply · Cluster state = Git state · Pull-based only
+```
+
+🔗 **Repo:** [**github-actions-eks**](https://github.com/rajeshdangi409/github-actions-eks) — Terraform (two-stage remote-state bootstrap + EKS), GitHub Actions CI, Helm, FluxCD image automation.
+
+**⚡ Key Engineering Decisions (click to expand)**
+
+**🔄 CI/CD infinite loop, fixed at the root** FluxCD's `ImageUpdateAutomation` commits new image tags back to `main`, which could re-trigger CI forever. Solved with a `paths` filter on the workflow *and* an `if: github.event.head_commit.author.name != 'Flux Bot'` guard on the job itself.
+
+**📅 Correct tag ordering for timestamp-based tags** Image tags follow `YYYYMMDD-HHMMSS-<sha>`. The `ImagePolicy`'s numerical sort had to be set to `order: asc` — not the default `desc` — for Flux to actually pick the newest build.
+
+**🔁 Explicit reconcile strategy** Added `reconcileStrategy: Revision` to the `HelmRelease` chart spec so Flux re-evaluates on every Git commit instead of waiting on its default polling interval.
+
+**🗂️ Clean separation of concerns** `apps/flask-app/` holds only Flux's `HelmRelease`/`Kustomization`/`Namespace` manifests; the actual Helm chart lives in `helm/flask-app/`; app source stays at the repo root — each layer owns exactly one job.
+
+---
+
 ## 📊 GitHub Stats
 
 <div align="center">
