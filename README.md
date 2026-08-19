@@ -2,7 +2,7 @@
 
 ![header](https://capsule-render.vercel.app/api?type=waving&color=0:1a1b27,50:1F5C8B,100=2F81F7&height=200&section=header&text=Rajesh%20Dangi&fontSize=55&fontColor=ffffff&fontAlignY=38&desc=DevOps%20Engineer%20%7C%20AWS%20%7C%20IaC%20%7C%20CI%2FCD%20%7C%20GitOps&descAlignY=58&descSize=16&descColor=a0c4ff)
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&pause=900&color=58A6FF&center=true&vCenter=true&width=680&lines=Terraform+%7C+AWS+%7C+Jenkins+%7C+Docker+%7C+Kubernetes+%7C+FluxCD;Built+a+5-repo+end-to-end+DevOps+pipeline+on+AWS+EKS;Infrastructure+as+Code+%7C+GitOps+%7C+CI%2FCD+%7C+Cloud+Automation" alt="typing" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&pause=900&color=58A6FF&center=true&vCenter=true&width=680&lines=Terraform+%7C+AWS+%7C+Jenkins+%7C+Docker+%7C+Kubernetes+%7C+FluxCD;Built+3+end-to-end+DevOps+pipelines+on+AWS+EKS;Infrastructure+as+Code+%7C+GitOps+%7C+CI%2FCD+%7C+Cloud+Automation" alt="typing" />
 
 <br/>
 
@@ -27,6 +27,7 @@
 ![Terraform](https://img.shields.io/badge/Terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white)
 ![Jenkins](https://img.shields.io/badge/Jenkins-%232C5263.svg?style=for-the-badge&logo=jenkins&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
 ![Ansible](https://img.shields.io/badge/Ansible-%231A1918.svg?style=for-the-badge&logo=ansible&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![FluxCD](https://img.shields.io/badge/FluxCD-5468FF?style=for-the-badge&logo=flux&logoColor=white)
@@ -40,6 +41,7 @@
 ![EC2](https://img.shields.io/badge/EC2-FF9900?style=flat-square&logo=amazon-ec2&logoColor=white)
 ![EKS](https://img.shields.io/badge/EKS-FF9900?style=flat-square&logo=amazon-eks&logoColor=white)
 ![ECR](https://img.shields.io/badge/ECR-569A31?style=flat-square&logo=amazon-aws&logoColor=white)
+![RDS](https://img.shields.io/badge/RDS-527FFF?style=flat-square&logo=amazon-rds&logoColor=white)
 ![S3](https://img.shields.io/badge/S3-569A31?style=flat-square&logo=amazon-s3&logoColor=white)
 ![IAM](https://img.shields.io/badge/IAM-DD344C?style=flat-square&logo=amazon-aws&logoColor=white)
 ![VPC](https://img.shields.io/badge/VPC-8C4FFF?style=flat-square&logo=amazon-aws&logoColor=white)
@@ -54,6 +56,7 @@
 ![Git](https://img.shields.io/badge/Git-%23F05033.svg?style=flat-square&logo=git&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3670A0?style=flat-square&logo=python&logoColor=ffdd54)
 ![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=flat-square&logo=mysql&logoColor=white)
 ![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 ![VS Code](https://img.shields.io/badge/VS%20Code-0078d7?style=flat-square&logo=visual-studio-code&logoColor=white)
@@ -64,9 +67,11 @@
 
 ## 🙋 About Me
 
-> Built a **complete, production-grade DevOps pipeline on AWS from scratch** — infrastructure provisioning → configuration management → CI/CD automation → containerized deployment → GitOps delivery. Every layer, every tool, hands-on.
+> Built **three independent, production-grade DevOps pipelines on AWS from scratch** — infrastructure provisioning → configuration management → CI/CD automation → containerized deployment → GitOps delivery. Every layer, every tool, hands-on.
 
 - 🏗️ **CloudPulse** — 5-repository, end-to-end DevOps capstone project on AWS EKS
+- 🗄️ **CloudForm** — 4-repository pipeline adding a private RDS database layer, built on GitHub Actions
+- 🔁 **github-actions-eks** — single-repo pipeline with FluxCD image automation & Helm
 - 🎓 Completed **BCA** from Manipal University, Jaipur (2026)
 - 🤖 Uses **GitHub Copilot (Claude Sonnet/Opus)** for AI-assisted IaC authoring, debugging & code review
 - 📜 Pursuing **HashiCorp Terraform Associate (003)**
@@ -138,6 +143,70 @@ Trivy is installed via the `aws-tools` Ansible role and scans Docker images befo
 
 **🚪 Manual approval gates**
 Both the create and destroy Jenkins pipelines require human approval before Terraform apply/destroy runs — prevents accidental infra changes.
+
+</details>
+
+---
+
+## 🚀 Featured Project — CloudForm
+
+<div align="center">
+
+### Multi-Repo IaC Pipeline with RDS Integration & GitOps
+*A 4-repository pipeline extending the CloudPulse pattern with a private database layer and GitHub Actions CI/CD*
+
+</div>
+
+```
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                       CLOUDFORM  —  PIPELINE FLOW                        ║
+╠══════════════╦════════════════════════╦═══════════════════════════════════╣
+║  BOOTSTRAP   ║   INFRA (Terraform)    ║   APP + GITOPS (GitHub Actions)   ║
+║ (Terraform)  ║                        ║                                    ║
+╠══════════════╬════════════════════════╬═══════════════════════════════════╣
+║  S3 bucket   ║  VPC (public+private)  ║  git push main                    ║
+║  DynamoDB    ║  EKS (managed nodes)   ║  Docker build → ECR push          ║
+║  lock table  ║  RDS MySQL — private   ║  Commit new image tag ►           ║
+║              ║   subnet, SG scoped    ║   cloudform-gitops repo           ║
+║              ║   to EKS nodes only    ║       │                           ║
+║              ║  ECR repo              ║       ▼                           ║
+║              ║  Flux auto-bootstrapped║  FluxCD reconciles → EKS          ║
+║              ║  by the apply pipeline ║  DB Secret injected in-cluster    ║
+╚══════════════╩════════════════════════╩═══════════════════════════════════╝
+   Two-stage GitHub Actions: auto plan-only run + manual approval-gated apply
+   RDS isolated to private subnets · DB password never committed to Git
+```
+
+<br/>
+
+| Repository | Layer | Description |
+| :--- | :---: | :--- |
+| [**cloudform-bootstrap**](https://github.com/rajeshdangi409/cloudform-bootstrap) | 🏗️ IaC | Terraform — S3 bucket + DynamoDB table for CloudForm's remote state backend |
+| [**cloudform-infra**](https://github.com/rajeshdangi409/cloudform-infra) | ☁️ Infra | VPC, EKS, private RDS (MySQL), ECR via Terraform community modules; two-stage GitHub Actions (auto plan / manual apply); auto-bootstraps FluxCD onto the cluster |
+| [**cloudform-app**](https://github.com/rajeshdangi409/cloudform-app) | 🐍 CI | Flask + PyMySQL registration app; CI builds the image, pushes to ECR, and updates the GitOps manifest on every push |
+| [**cloudform-gitops**](https://github.com/rajeshdangi409/cloudform-gitops) | 🔄 GitOps | Flux `Kustomization` CR watches `apps/cloudform`; DB credentials injected as an in-cluster Secret, never committed to Git |
+
+<br/>
+
+<details>
+<summary><b>⚡ Key Engineering Decisions (click to expand)</b></summary>
+
+<br/>
+
+**🗄️ Private, network-isolated database**
+RDS MySQL lives in private subnets with no public accessibility. Its security group allows inbound port 3306 **only** from the EKS node security group — nothing else can reach it.
+
+**🤖 One-click infra + GitOps bootstrap**
+The `terraform-apply.yml` GitHub Actions workflow runs `init → plan → apply`, updates kubeconfig, installs the Flux CLI, and bootstraps Flux onto the cluster — all in a single manual-trigger run.
+
+**🧩 Community modules over custom modules**
+Where CloudPulse hand-writes Terraform modules for full transparency, CloudForm intentionally uses `terraform-aws-modules` (vpc/eks/rds/ecr) to demonstrate comfort working with production-standard, battle-tested modules too.
+
+**🔒 Secrets never touch Git**
+The database password is provisioned directly as a Kubernetes Secret inside the cluster — only non-sensitive config (host, user, db name) lives in the `cloudform-gitops` repo.
+
+**🚦 Two-stage pipeline safety**
+Every push to `main` only ever runs a read-only `plan`. Real infrastructure changes require a human to manually trigger the separate `apply` workflow — no accidental applies from routine commits.
 
 </details>
 
@@ -217,7 +286,6 @@ Both the create and destroy Jenkins pipelines require human approval before Terr
 learning:
   - Kubernetes internals — RBAC, NetworkPolicies, HPA, Cluster Autoscaler
   - ArgoCD as an alternative GitOps engine to FluxCD
-  - GitHub Actions for cloud-native CI pipelines
 
 pursuing:
   - HashiCorp Terraform Associate (003)
