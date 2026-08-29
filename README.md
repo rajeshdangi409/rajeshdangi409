@@ -75,7 +75,7 @@
 - 🎓 Completed **BCA** from Manipal University, Jaipur (2026)
 - 🤖 Uses **GitHub Copilot (Claude Sonnet/Opus)** for AI-assisted IaC authoring, debugging & code review
 - 📜 Pursuing **HashiCorp Terraform Associate (003)**
-- 📬 Open to **fresher DevOps Engineer** roles — Pune preferred, remote considered
+- 📬 Open to **DevOps & Cloud Engineer** roles — Pune preferred, remote considered
 
 ---
 
